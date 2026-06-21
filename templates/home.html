@@ -1,47 +1,149 @@
-<body>
-    <div class="login">
-        <h1>Boston House Price Prediction</h1>
 
-        <!-- Main input for receiving query to our ML model -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston House Price Prediction</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            background:linear-gradient(135deg,#1e3c72,#2a5298);
+            padding:20px;
+        }
+
+        .login{
+            width:500px;
+            max-width:95%;
+            background:rgba(255,255,255,0.15);
+            backdrop-filter:blur(10px);
+            border-radius:20px;
+            padding:30px;
+            box-shadow:0 8px 32px rgba(0,0,0,0.3);
+            text-align:center;
+        }
+
+        h1{
+            color:white;
+            margin-bottom:25px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:8px 0;
+            border:none;
+            border-radius:10px;
+            font-size:14px;
+            outline:none;
+        }
+
+        input:focus{
+            box-shadow:0 0 10px #00d4ff;
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            margin-top:15px;
+            border:none;
+            border-radius:10px;
+            background:#00c6ff;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#0072ff;
+            transform:scale(1.03);
+        }
+
+        .prediction{
+            margin-top:20px;
+            color:white;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        footer{
+            margin-top:20px;
+            color:white;
+            font-size:14px;
+            text-align:center;
+        }
+
+        @media(max-width:600px){
+            .login{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login">
+
+        <h1>🏠 Boston House Price Prediction</h1>
+
         <form action="{{ url_for('predict') }}" method="post">
 
-            <input type="text" name="CRIM" placeholder="CRIM" required /><br>
+            <input type="text" name="CRIM" placeholder="CRIM" required>
 
-            <input type="text" name="ZN" placeholder="ZN" required /><br>
+            <input type="text" name="ZN" placeholder="ZN" required>
 
-            <input type="text" name="INDUS" placeholder="INDUS" required /><br>
+            <input type="text" name="INDUS" placeholder="INDUS" required>
 
-            <input type="text" name="CHAS" placeholder="CHAS" required /><br>
+            <input type="text" name="CHAS" placeholder="CHAS" required>
 
-            <input type="text" name="NOX" placeholder="NOX" required /><br>
+            <input type="text" name="NOX" placeholder="NOX" required>
 
-            <input type="text" name="RM" placeholder="RM" required /><br>
+            <input type="text" name="RM" placeholder="RM" required>
 
-            <input type="text" name="AGE" placeholder="AGE" required /><br>
+            <input type="text" name="AGE" placeholder="AGE" required>
 
-            <input type="text" name="DIS" placeholder="DIS" required /><br>
+            <input type="text" name="DIS" placeholder="DIS" required>
 
-            <input type="text" name="RAD" placeholder="RAD" required /><br>
+            <input type="text" name="RAD" placeholder="RAD" required>
 
-            <input type="text" name="TAX" placeholder="TAX" required /><br>
+            <input type="text" name="TAX" placeholder="TAX" required>
 
-            <input type="text" name="PTRATIO" placeholder="PTRATIO" required /><br>
+            <input type="text" name="PTRATIO" placeholder="PTRATIO" required>
 
-            <input type="text" name="B" placeholder="B" required /><br>
+            <input type="text" name="B" placeholder="B" required>
 
-            <input type="text" name="LSTAT" placeholder="LSTAT" required /><br>
+            <input type="text" name="LSTAT" placeholder="LSTAT" required>
 
-            <button type="submit" class="btn btn-primary btn-block btn-large">
-                Predict
+            <button type="submit" class="btn">
+                Predict House Price
             </button>
 
         </form>
 
-        <br>
-        <br>
-
-        {{ prediction_text }}
+        <div class="prediction">
+            {{ prediction_text }}
+        </div>
 
     </div>
+
+    <footer>
+        <p>Developed by <strong>Mridhul Pradeep</strong> © 2026</p>
+    </footer>
+
 </body>
 </html>
+```
