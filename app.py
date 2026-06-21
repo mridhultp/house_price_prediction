@@ -31,7 +31,18 @@ def predict():
     final_input=scaler.transform(np.array(data).reshape(1,-1))
     print(final_input)
     output=regmodel.predict(final_input)[0]
-    return render_template("home.html",prediction_text="The predicted house price is {}".format(output))
+    output = max(0, output)  # Ensure non-negative prediction
+        # Validate unrealistic predictions
+    if output == 0:
+        prediction_text = "⚠️ Please enter realistic housing feature values."
+    else:
+        prediction_text = f"🏠 Estimated House Price: ${output*1000:,.2f}"
+
+    return render_template(
+        "home.html",
+        prediction_text=prediction_text
+    )
+
 
 if __name__=="__main__":
     app.run(debug=True)

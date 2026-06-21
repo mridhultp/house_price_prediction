@@ -102,31 +102,19 @@
 
         <form action="{{ url_for('predict') }}" method="post">
 
-            <input type="text" name="CRIM" placeholder="CRIM" required>
-
-            <input type="text" name="ZN" placeholder="ZN" required>
-
-            <input type="text" name="INDUS" placeholder="INDUS" required>
-
-            <input type="text" name="CHAS" placeholder="CHAS" required>
-
-            <input type="text" name="NOX" placeholder="NOX" required>
-
-            <input type="text" name="RM" placeholder="RM" required>
-
-            <input type="text" name="AGE" placeholder="AGE" required>
-
-            <input type="text" name="DIS" placeholder="DIS" required>
-
-            <input type="text" name="RAD" placeholder="RAD" required>
-
-            <input type="text" name="TAX" placeholder="TAX" required>
-
-            <input type="text" name="PTRATIO" placeholder="PTRATIO" required>
-
-            <input type="text" name="B" placeholder="B" required>
-
-            <input type="text" name="LSTAT" placeholder="LSTAT" required>
+            <input type="number" step="0.01" name="CRIM" placeholder="CRIM (0.03)" required>
+            <input type="number" step="0.01" name="ZN" placeholder="ZN (18.0)" required>
+            <input type="number" step="0.01" name="INDUS" placeholder="INDUS (2.31)" required>
+            <input type="number" step="0.01" name="CHAS" placeholder="CHAS (0 or 1)" required>
+            <input type="number" step="0.01" name="NOX" placeholder="NOX (0.53)" required>
+            <input type="number" step="0.01" name="RM" placeholder="RM (6.57)" required>
+            <input type="number" step="0.01" name="AGE" placeholder="AGE (65.2)" required>
+            <input type="number" step="0.01" name="DIS" placeholder="DIS (4.09)" required>
+            <input type="number" step="0.01" name="RAD" placeholder="RAD (1-24)" required>
+            <input type="number" step="0.01" name="TAX" placeholder="TAX (296)" required>
+            <input type="number" step="0.01" name="PTRATIO" placeholder="PTRATIO (15.3)" required>
+            <input type="number" step="0.01" name="B" placeholder="B (396.9)" required>
+            <input type="number" step="0.01" name="LSTAT" placeholder="LSTAT (4.98)" required>  
 
             <button type="submit" class="btn">
                 Predict House Price
