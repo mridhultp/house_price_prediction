@@ -7,6 +7,8 @@
 3. [Streamlit](https://streamlit.io/)
 4. [GitCLI](https://git-scm.com/docs/gitcli)
 
+
+
 ### Create and activate new environment
 
 ```
@@ -19,6 +21,4 @@ python -m venv myvenv
 
 ## Click here to visit the site
 
-```
-https://house-price-prediction-fqpd.onrender.com
-```
+[HousePrediction](https://house-price-prediction-fqpd.onrender.com)
